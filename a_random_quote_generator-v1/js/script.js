@@ -41,8 +41,8 @@ const quotes = [{
 function getRandomQuote(arr) {
     // 1. Create a variable that generates a random number
     // between zero and the last index in the `quotes` array
-    let random = Math.ceil(Math.random() * arr.length);
-    // console.log(random);
+    let random = Math.ceil(Math.random() * arr.length) - 1;
+    console.log(random);
 
     // 2. Use the random number variable and bracket notation 
     // to grab a random object from the `quotes` array, and 
