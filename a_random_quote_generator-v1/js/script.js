@@ -63,7 +63,18 @@ function getRandomQuote(arr) {
 function printQuote() {
     let quote = getRandomQuote(quotes);
     // console.log(quote);
-    let newQuote = `<p class= 'quotes'>${quote.quote}</p><p class='source'>${quote.source}</p>`;
+    let newQuote = `<p class= 'quote'>${quote.quote}</p><p class='source'>${quote.source}</p>`;
+
+    if (quote.citation && quote.year) {
+        newQuote = `<p class= 'quote'>${quote.quote}</p><p class='source'>${quote.source} <span class='citation'>${quote.citation}</span><span class='year'>${quote.year}</span></p>`;
+    } else if (quote.citation && !quote.year) {
+        newQuote = `<p class= 'quote'>${quote.quote}</p><p class='source'>${quote.source}<span class='citation'>${quote.citation}</span></p>`;
+    } else if (quote.year && !quote.citation) {
+        newQuote = `<p class= 'quote'>${quote.quote}</p><p class='source'>${quote.source}<span class='year'>${quote.year}</span></p>`;
+    }
+
+
+    document.getElementById('quote-box').innerHTML = newQuote;
 }
 
 /***
@@ -72,15 +83,3 @@ function printQuote() {
  ***/
 // console.log('test');
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
-
-
-{
-    /* 
-      <div class="container">
-        <div id="quote-box" class="quote-box">
-          <p class="quote">Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.</p>
-          <p class="source">Patrick McKenzie<span class="citation">Twitter</span><span class="year">2016</span></p>
-        </div>
-      </div> 
-    */
-}
