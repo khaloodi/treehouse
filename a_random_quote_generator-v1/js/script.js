@@ -41,7 +41,7 @@ const quotes = [{
 function getRandomQuote(arr) {
     // 1. Create a variable that generates a random number
     // between zero and the last index in the `quotes` array
-    let random = Math.ceil(Math.random() * arr.length) - 1;
+    let random = Math.floor(Math.random() * arr.length);
     console.log(random);
 
     // 2. Use the random number variable and bracket notation 
@@ -73,8 +73,13 @@ function printQuote() {
         newQuote = `<p class= 'quote'>${quote.quote}</p><p class='source'>${quote.source}<span class='year'>${quote.year}</span></p>`;
     }
 
+    // change the background to be a random color
+    let backgroundColor = `rgb(${getRandomNumber(256)},${getRandomNumber(256)},${getRandomNumber(256)})`;
+    console.log(`RGB Colors selected ${backgroundColor}`)
+    document.body.style.backgroundColor = backgroundColor;
 
-    document.getElementById('quote-box').innerHTML = newQuote;
+
+    document.getElementById('quote-box').innerContent = newQuote;
 }
 
 /***
