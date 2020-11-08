@@ -85,6 +85,9 @@ function printQuote() {
     document.body.style.backgroundColor = backgroundColor;
 }
 
+// call printQuote function with a random interval 10k miliseconds or 10seconds
+setInterval(printQuote, 10000);
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
