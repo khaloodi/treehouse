@@ -80,7 +80,7 @@ function printQuote() {
     document.getElementById('quote-box').innerHTML = newQuote;
 
     // change the background to be a random color
-    let backgroundColor = `rgb(${getRandomNumber(256)},${getRandomNumber(256)},${getRandomNumber(256)})`;
+    let backgroundColor = `rgb(${getRandomInt(255)},${getRandomInt(255)},${getRandomInt(255)})`;
     console.log(`RGB Colors selected ${backgroundColor}`);
     document.body.style.backgroundColor = backgroundColor;
 }
