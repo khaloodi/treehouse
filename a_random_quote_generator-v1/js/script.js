@@ -55,6 +55,10 @@ function getRandomQuote(arr) {
 
 // console.log(getRandomQuote(quotes));
 
+function getRandomInt(max) {
+    // generate a random integer -- for background color
+    return Math.floor(Math.random() * Math.floor(max));
+}
 
 /***
  * `printQuote` function
@@ -73,13 +77,12 @@ function printQuote() {
         newQuote = `<p class= 'quote'>${quote.quote}</p><p class='source'>${quote.source}<span class='year'>${quote.year}</span></p>`;
     }
 
+    document.getElementById('quote-box').innerHTML = newQuote;
+
     // change the background to be a random color
     let backgroundColor = `rgb(${getRandomNumber(256)},${getRandomNumber(256)},${getRandomNumber(256)})`;
-    console.log(`RGB Colors selected ${backgroundColor}`)
+    console.log(`RGB Colors selected ${backgroundColor}`);
     document.body.style.backgroundColor = backgroundColor;
-
-
-    document.getElementById('quote-box').innerContent = newQuote;
 }
 
 /***
