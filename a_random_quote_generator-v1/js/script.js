@@ -12,15 +12,18 @@ project 1 - A Random Quote Generator
  ***/
 const quotes = [{
         source: 'Robin Sharma',
-        quote: 'Make your faith larger than your fears and your dreams larger than your doubts.'
+        quote: 'Make your faith larger than your fears and your dreams larger than your doubts.',
+        tags: ['Inspirational', 'Religious']
     },
     {
         source: 'Dr. Seuss',
-        quote: 'You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose.'
+        quote: 'You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose.',
+        tags: ['Children']
     },
     {
         source: 'Babe Ruth',
-        quote: 'Never let the fear of striking out keep you from playing the game.'
+        quote: 'Never let the fear of striking out keep you from playing the game.',
+        tags: ['Sports']
     },
     {
         source: 'Nelson Mandela',
