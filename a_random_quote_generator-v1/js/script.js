@@ -83,7 +83,7 @@ function printQuote() {
     // console.log(quote);
     let newQuote = `<p class= 'quote'>${quote.quote}</p><p class='source'>${quote.source}</p>`;
 
-    if (quote.citation && quote.year && quote.tags) {
+    if (quote.citation && quote.year && quote.tag) {
         newQuote = `<p class= 'quote'>${quote.quote}</p><p class='source'>${quote.source} <span class='citation'>${quote.citation}</span><span class='year'>${quote.year}</span> <br><small class="tags">${quote.tag}}</small></p>`
     } else if (quote.citation && quote.year) {
         newQuote = `<p class= 'quote'>${quote.quote}</p><p class='source'>${quote.source} <span class='citation'>${quote.citation}</span><span class='year'>${quote.year}</span></p>`;
