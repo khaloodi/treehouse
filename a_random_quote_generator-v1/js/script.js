@@ -14,7 +14,7 @@ const quotes = [{
         source: 'Robin Sharma',
         quote: 'Make your faith larger than your fears and your dreams larger than your doubts.',
         citation: 'Unknown',
-        year: NaN,
+        year: 100,
         tag: 'Inspiration'
     },
     {
