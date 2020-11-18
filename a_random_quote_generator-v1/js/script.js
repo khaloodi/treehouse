@@ -28,7 +28,7 @@ const quotes = [{
         source: 'Babe Ruth',
         quote: 'Never let the fear of striking out keep you from playing the game.',
         citation: 'TV',
-        year: 1992
+        year: 1992,
         tag: 'Sports',
 
     },
