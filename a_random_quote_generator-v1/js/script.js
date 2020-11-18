@@ -22,7 +22,7 @@ const quotes = [{
         quote: 'You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose.',
         citation: 'A book',
         year: 2001,
-        tags: 'Children'
+        tag: 'Children'
     },
     {
         source: 'Babe Ruth',
