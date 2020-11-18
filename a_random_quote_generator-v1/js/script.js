@@ -13,27 +13,38 @@ project 1 - A Random Quote Generator
 const quotes = [{
         source: 'Robin Sharma',
         quote: 'Make your faith larger than your fears and your dreams larger than your doubts.',
-        tags: ['Inspirational', 'Religious']
+        citation: 'Unknown',
+        year: NaN,
+        tag: 'Inspiration'
     },
     {
         source: 'Dr. Seuss',
         quote: 'You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose.',
-        tags: ['Children']
+        citation: 'A book',
+        year: 2001,
+        tags: 'Children'
     },
     {
         source: 'Babe Ruth',
         quote: 'Never let the fear of striking out keep you from playing the game.',
-        tags: ['Sports']
+        citation: 'TV',
+        year: 1992
+        tag: 'Sports',
+
     },
     {
         source: 'Nelson Mandela',
-        quote: 'The greatest glory in living lies not in never falling, but in rising every time we fall.'
+        quote: 'The greatest glory in living lies not in never falling, but in rising every time we fall.',
+        citation: 'That time and place',
+        year: 1960,
+        tag: 'History'
     },
     {
         source: 'Casey Neistat',
         quote: 'Do more.',
         citation: 'YouTube',
-        year: 2017
+        year: 2017,
+        tag: 'Social Media'
     }
 ]
 
@@ -72,7 +83,9 @@ function printQuote() {
     // console.log(quote);
     let newQuote = `<p class= 'quote'>${quote.quote}</p><p class='source'>${quote.source}</p>`;
 
-    if (quote.citation && quote.year) {
+    if (quote.citation && quote.year && quote.tags) {
+        newQuote = `<p class= 'quote'>${quote.quote}</p><p class='source'>${quote.source} <span class='citation'>${quote.citation}</span><span class='year'>${quote.year}</span> <br><small class="tags">${quote.tags[0]}}</small></p>`
+    } else if (quote.citation && quote.year) {
         newQuote = `<p class= 'quote'>${quote.quote}</p><p class='source'>${quote.source} <span class='citation'>${quote.citation}</span><span class='year'>${quote.year}</span></p>`;
     } else if (quote.citation && !quote.year) {
         newQuote = `<p class= 'quote'>${quote.quote}</p><p class='source'>${quote.source}<span class='citation'>${quote.citation}</span></p>`;
