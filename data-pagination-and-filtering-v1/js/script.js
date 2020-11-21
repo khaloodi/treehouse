@@ -57,18 +57,55 @@ This function will create and insert/append the elements needed to display a "pa
 
 function showPage(list, page) {
     // create two variables which will represent the index for the first and last student on the page
-    const firstStudent = list[0];
-    const lastStudent = list[list.length - 1];
+    const startIndex = page * 9 - 9;
+    const endIndex = page * 9;
 
     // select the element with a class of `student-list` and assign it to a variable
-    const ul = document.querySelector('ul.student-list');
+    const studentList = document.querySelector('ul.student-list');
     // set the innerHTML property of the variable you just created to an empty string
-    ul.innerHTML = '';
+    studentList.innerHTML = '';
     // loop over the length of the `list` parameter
-    // inside the loop create a conditional to display the proper students
-    // inside the conditional:
-    // create the elements needed to display the student information
-    // insert the above elements
+    for (let i = 0; i < list.length; i++) {
+        // inside the loop create a conditional to display the proper students
+        if (i >= startIndex && i < endIndex) {
+            // inside the conditional:
+            // create the elements needed to display the student information
+            const li = document.createElement('li');
+            li.classList.add('student-item', 'cf');
+
+            const div1 = document.createElement('div');
+            div1.classList.add('student-details');
+
+            const img = document.createElement('img');
+            img.classList.add('avatar');
+            img.src = data[i].picture.thumbnail;
+
+            const h3 = document.createElement('h3');
+            h3.innerText = `${data[i].name.first + ' ' + data[i].name.last}`;
+
+            const span = document.createElement('span');
+            span.classList.add('email');
+            span.innerText = `${data[i].email}`;
+
+            const div2 = document.createElement('div');
+            div1.classList.add('joined-details');
+
+            const span2 = document.createElement('span');
+            span.classList.add('date');
+            span2.innerText = `${data[i].registered.date}`;
+
+            // insert the above elements
+            studentList.appendChild(li);
+            li.appendChild(div1);
+            div1.appendChild(img);
+            div1.appendChild(h3);
+            div1.appendChild(span);
+
+            li.appendChild(div2);
+            div2.appendChild(span2);
+        }
+    }
+
 }
 
 /*
@@ -79,4 +116,4 @@ This function will create and insert/append the elements needed for the paginati
 
 
 // Call functions
-showPage();
+showPage(data, 1);
