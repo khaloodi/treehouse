@@ -135,14 +135,14 @@ function addPagination(list) {
         // create an event listener on the `link-list` element
         linkList.addEventListener('click', (e) => {
             // if the click target is a button:
-            if (e.target = 'BUTTON') {
+            if (e.target.tagName === 'BUTTON') {
                 // remove the "active" class from the previous button
                 document.querySelector('li.active').classList.remove('active');
                 // add the active class to the clicked button
                 e.target.classList.add('active');
-                // call the showPage function passing the `list` parameter and page to display as arguments
-                showPage(list, 1);
             }
+            // call the showPage function passing the `list` parameter and page to display as arguments
+            showPage(list, i);
         })
 
     }
