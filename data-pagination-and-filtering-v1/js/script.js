@@ -136,15 +136,14 @@ function addPagination(list) {
     linkList.firstElementChild.firstElementChild.className = 'active';
     // create an event listener on the `link-list` element
     linkList.addEventListener('click', (e) => {
-        console.log(e.target.tagName)
-            // if the click target is a button:
+        // if the click target is a button:
         if (e.target.tagName === 'BUTTON') {
             // remove the "active" class from the previous button
             document.querySelector('button.active').classList.remove('active');
             // add the active class to the clicked button
             e.target.classList.add('active');
             // call the showPage function passing the `list` parameter and page to display as arguments
-            showPage(list, i);
+            showPage(list, e.target.innerText);
         }
     })
 
