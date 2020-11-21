@@ -16,43 +16,57 @@ const ul = document.querySelector('ul.student-list');
 Create the `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
 */
-const showPage = () => {
-    for (let i = 0; i < data.length; i++) {
-        const li = document.createElement('li');
-        li.classList.add('student-item', 'cf');
+// const showPage = () => {
+//     for (let i = 0; i < data.length; i++) {
+//         const li = document.createElement('li');
+//         li.classList.add('student-item', 'cf');
 
-        const div1 = document.createElement('div');
-        div1.classList.add('student-details');
+//         const div1 = document.createElement('div');
+//         div1.classList.add('student-details');
 
-        const img = document.createElement('img');
-        img.classList.add('avatar');
-        img.src = data[i].picture.thumbnail;
+//         const img = document.createElement('img');
+//         img.classList.add('avatar');
+//         img.src = data[i].picture.thumbnail;
 
-        const h3 = document.createElement('h3');
-        h3.innerText = `${data[i].name.first + ' ' + data[i].name.last}`;
+//         const h3 = document.createElement('h3');
+//         h3.innerText = `${data[i].name.first + ' ' + data[i].name.last}`;
 
-        const span = document.createElement('span');
-        span.classList.add('email');
-        span.innerText = `${data[i].email}`;
+//         const span = document.createElement('span');
+//         span.classList.add('email');
+//         span.innerText = `${data[i].email}`;
 
-        const div2 = document.createElement('div');
-        div1.classList.add('joined-details');
+//         const div2 = document.createElement('div');
+//         div1.classList.add('joined-details');
 
-        const span2 = document.createElement('span');
-        span.classList.add('date');
-        span2.innerText = `${data[i].registered.date}`;
+//         const span2 = document.createElement('span');
+//         span.classList.add('date');
+//         span2.innerText = `${data[i].registered.date}`;
 
-        ul.appendChild(li);
-        li.appendChild(div1);
-        div1.appendChild(img);
-        div1.appendChild(h3);
-        div1.appendChild(span);
+//         ul.appendChild(li);
+//         li.appendChild(div1);
+//         div1.appendChild(img);
+//         div1.appendChild(h3);
+//         div1.appendChild(span);
 
 
-        li.appendChild(div2);
-        div2.appendChild(span2);
-    }
+//         li.appendChild(div2);
+//         div2.appendChild(span2);
+//     }
 
+// }
+
+function showPage(list, page) {
+    // create two variables which will represent the index for the first and last student on the page
+
+    // select the element with a class of `student-list` and assign it to a variable
+
+    // set the innerHTML property of the variable you just created to an empty string
+
+    // loop over the length of the `list` parameter
+    // inside the loop create a conditional to display the proper students
+    // inside the conditional:
+    // create the elements needed to display the student information
+    // insert the above elements
 }
 
 /*
