@@ -117,7 +117,7 @@ function addPagination(list) {
     // create a variable to calculate the number of pages needed
     const numOfPages = Math.ceil(list.length / 9);
     // select the element with a class of `link-list` and assign it to a variable
-    const linkList = document.querySelector('ul.student-list');
+    const linkList = document.querySelector('ul.link-list');
     // set the innerHTML property of the variable you just created to an empty string
     linkList.innerHTML = '';
     // loop over the number of pages needed
@@ -126,26 +126,27 @@ function addPagination(list) {
         const li = document.createElement('li');
         const button = document.createElement('button');
         button.type = 'button';
-        button.innerText = `${i}`
-            // insert the above elements
+        button.innerText = `${i}`;
+        // insert the above elements
         linkList.appendChild(li);
         li.appendChild(button);
-        // give the first pagination button a class of "active"
-        linkList.firstElementChild.className = 'active';
-        // create an event listener on the `link-list` element
-        linkList.addEventListener('click', (e) => {
+    }
+    // give the first pagination button a class of "active"
+    console.log(linkList.firstElementChild)
+    linkList.firstElementChild.firstElementChild.className = 'active';
+    // create an event listener on the `link-list` element
+    linkList.addEventListener('click', (e) => {
+        console.log(e.target.tagName)
             // if the click target is a button:
-            if (e.target.tagName === 'BUTTON') {
-                // remove the "active" class from the previous button
-                document.querySelector('li.active').classList.remove('active');
-                // add the active class to the clicked button
-                e.target.classList.add('active');
-            }
+        if (e.target.tagName === 'BUTTON') {
+            // remove the "active" class from the previous button
+            document.querySelector('button.active').classList.remove('active');
+            // add the active class to the clicked button
+            e.target.classList.add('active');
             // call the showPage function passing the `list` parameter and page to display as arguments
             showPage(list, i);
-        })
-
-    }
+        }
+    })
 
 }
 
