@@ -10,7 +10,7 @@ For assistance:
    Check out the "Project Resources" section of the Instructions tab: https://teamtreehouse.com/projects/data-pagination-and-filtering#instructions
    Reach out in your Slack community: https://treehouse-fsjs-102.slack.com/app_redirect?channel=unit-2
 */
-const ul = document.querySelector('ul.student-list');
+// const ul = document.querySelector('ul.student-list');
 
 /*
 Create the `showPage` function
@@ -57,11 +57,13 @@ This function will create and insert/append the elements needed to display a "pa
 
 function showPage(list, page) {
     // create two variables which will represent the index for the first and last student on the page
+    const firstStudent = list[0];
+    const lastStudent = list[list.length - 1];
 
     // select the element with a class of `student-list` and assign it to a variable
-
+    const ul = document.querySelector('ul.student-list');
     // set the innerHTML property of the variable you just created to an empty string
-
+    ul.innerHTML = '';
     // loop over the length of the `list` parameter
     // inside the loop create a conditional to display the proper students
     // inside the conditional:
