@@ -78,7 +78,7 @@ function showPage(list, page) {
 
             const img = document.createElement('img');
             img.classList.add('avatar');
-            img.src = data[i].picture.thumbnail;
+            img.src = data[i].picture.large;
 
             const h3 = document.createElement('h3');
             h3.innerText = `${data[i].name.first + ' ' + data[i].name.last}`;
