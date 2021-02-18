@@ -6,4 +6,15 @@ class Phrase {
     constructor(phrase) {
         this.phrase = phrase.toLowerCase();
     }
+
+    /**
+     * Display phrase on game board
+     */
+
+    addPhraseToDisplay() {
+        let phraseSection = document.getElementById('phrase');
+        console.log(this.phrase.forEach(letter => {
+            return letter
+        }))
+    }
 }
