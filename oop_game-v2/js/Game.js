@@ -5,7 +5,23 @@
 class Game {
     constructor() {
         this.missed = 0;
-        this.phrases = [];
+        this.phrases = this.createPhrase();
         this.activePhrase = null;
+    }
+
+    /** 
+     * Creates phrases for use in the game
+     * @return {array} returns an array of phrases that can be used in the game
+     */
+
+    createPhrase() {
+        const phrases = [
+            new Phrase('life is like a box of chocolates'),
+            new Phrase('there is no try only do'),
+            new Phrase('i found you ms new booty'),
+            new Phrase('are you talking to me'),
+            new Phrase('i fear the man who has practiced one kick ten thousand times')
+        ]
+        return phrases;
     }
 }
