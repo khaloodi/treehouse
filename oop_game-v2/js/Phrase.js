@@ -13,8 +13,10 @@ class Phrase {
 
     addPhraseToDisplay() {
         let phraseSection = document.getElementById('phrase');
-        console.log(this.phrase.forEach(letter => {
-            return letter
-        }))
+        [this.phrase].forEach(word => {
+            [word].forEach(letter => {
+                console.log(letter.split(''))
+            })
+        })
     }
 }

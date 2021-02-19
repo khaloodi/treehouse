@@ -15,6 +15,7 @@ const game = new Game();
  })
 */
 
+/*
 const logPhrase = (phrase) => {
     console.log(`Phrase - phrase: `, phrase.phrase);
 };
@@ -24,3 +25,6 @@ logPhrase(game.getRandomPhrase());
 logPhrase(game.getRandomPhrase());
 logPhrase(game.getRandomPhrase());
 logPhrase(game.getRandomPhrase());
+*/
+
+game.getRandomPhrase().addPhraseToDisplay();
