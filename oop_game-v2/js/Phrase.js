@@ -15,7 +15,8 @@ class Phrase {
         let phraseSection = document.getElementById('phrase');
         [this.phrase].forEach(word => {
             [word].forEach(letter => {
-                console.log(letter.split(''))
+                const lettersArray = letter.split('')
+                console.log(lettersArray)
             })
         })
     }

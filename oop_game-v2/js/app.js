@@ -27,4 +27,4 @@ logPhrase(game.getRandomPhrase());
 logPhrase(game.getRandomPhrase());
 */
 
-game.getRandomPhrase().addPhraseToDisplay();
+game.getRandomPhrase().addPhraseToDisplay()
