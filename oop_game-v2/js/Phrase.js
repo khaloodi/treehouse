@@ -29,4 +29,17 @@ class Phrase {
             })
         })
     }
+
+    /**
+     * Checks if passed letter is in phrase
+     * @param (string) letter - Letter to check
+     */
+    checkLetter(letter) {
+
+    }
+
+    /**
+     * Displays passed letter on screen if match is found
+     * @param (string) letter - Letter to display
+     */
 }
