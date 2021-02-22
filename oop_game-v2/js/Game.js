@@ -100,9 +100,10 @@ class Game {
     }
 
     /**
-     * Handle game interaction
+     * Handles on screen keyboard button clicks
+     * @param (HTMLButtonElement) button - The clicked button element
      */
-    handleInteraction() {
-
+    handleInteraction(button) {
+        console.log(button);
     }
 }
