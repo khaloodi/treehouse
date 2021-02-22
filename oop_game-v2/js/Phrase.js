@@ -44,7 +44,6 @@ class Phrase {
      * @param (string) letter - Letter to display
      */
     showMatchedLetter(letter) {
-        // const phrase = document.getElementById('phrase')
         if (this.phrase.includes(letter)) {
             for (let i = 0; i < this.phrase.length; i++) {
                 if (this.phrase[i] === letter) {
