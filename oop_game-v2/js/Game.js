@@ -48,6 +48,21 @@ class Game {
         this.activePhrase.addPhraseToDisplay()
     }
 
+    /**
+     * Checks for winning move
+     * @return {boolean} True if game has been won, false if game hasn't been won
+     */
+    checkForWin() {
+        const listOfLetters = document.querySelector('#phrase ul').children
+        for (let i = 0; i < listOfLetters.length; i++) {
+            if (listOfLetters[i].className.includes('hide')) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
 
     /**
      * Handle game interaction
