@@ -29,7 +29,9 @@ logPhrase(game.getRandomPhrase());
 
 game.startGame();
 console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
-const keyboard = document.getElementById('qwerty');
-keyboard.addEventListener('click', e => {
-    game.handleInteraction(e.target);
-})
+const keyboard = document.getElementsByClassName('key');
+for (el of keyboard) {
+    el.addEventListener('click', e => {
+        game.handleInteraction(e.target);
+    })
+}
