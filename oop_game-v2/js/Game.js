@@ -70,7 +70,7 @@ class Game {
      */
     removeLife() {
         if (this.missed == 5) {
-            this.gameOver();
+            this.gameOver(false);
         }
         const scoreBoard = document.querySelector('#scoreboard ol').children
         let i = 0;
@@ -81,6 +81,23 @@ class Game {
         this.missed += 1;
     }
 
+    /**
+     * Displays game over message
+     * @param (boolean) gameWon - Whether or not the user won the game
+     */
+    gameOver(gameWon) {
+        const overlay = document.getElementById('overlay');
+        overlay.classList.remove('start');
+        overlay.style.display = '';
+        const h1 = document.getElementById('game-over-message')
+        if (gameWon) {
+            h1.innerHTML = 'Great Job!';
+            overlay.classList.add('win');
+        } else {
+            h1.innerHTML = 'Sorry better luck next time.';
+            overlay.classList.add('lose');
+        }
+    }
 
     /**
      * Handle game interaction
