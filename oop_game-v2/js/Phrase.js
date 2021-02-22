@@ -51,8 +51,6 @@ class Phrase {
                     document.querySelector('#phrase ul').children[i].classList.add('show');
                 }
             }
-        } else {
-            return false;
         }
     }
 }
