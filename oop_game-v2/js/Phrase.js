@@ -35,11 +35,25 @@ class Phrase {
      * @param (string) letter - Letter to check
      */
     checkLetter(letter) {
-
+        const letterInPhrase = this.phrase.includes(letter) ? true : false;
+        return letterInPhrase;
     }
 
     /**
      * Displays passed letter on screen if match is found
      * @param (string) letter - Letter to display
      */
+    showMatchedLetter(letter) {
+        // const phrase = document.getElementById('phrase')
+        if (this.phrase.includes(letter)) {
+            for (let i = 0; i < this.phrase.length; i++) {
+                if (this.phrase[i] === letter) {
+                    document.querySelector('#phrase ul').children[i].classList.remove('hide');
+                    document.querySelector('#phrase ul').children[i].classList.add('show');
+                }
+            }
+        } else {
+            return false;
+        }
+    }
 }

@@ -42,7 +42,6 @@ class Game {
         const overlay = document.getElementById('overlay');
         const startGame = document.getElementById('btn__reset');
         startGame.addEventListener('click', e => {
-            console.log('clicking')
             overlay.style.display = 'none';
         })
         this.activePhrase = this.getRandomPhrase()
