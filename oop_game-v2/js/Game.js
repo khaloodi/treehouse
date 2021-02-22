@@ -104,6 +104,11 @@ class Game {
      * @param (HTMLButtonElement) button - The clicked button element
      */
     handleInteraction(button) {
-        console.log(button);
+        // console.log(button.innerText)
+        button.disabled = true;
+        if (this.activePhrase.phrase.includes(button.innerText) == false) {
+            button.classList.add('wrong');
+            this.removeLife();
+        }
     }
 }
