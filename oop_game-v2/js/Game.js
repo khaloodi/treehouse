@@ -40,8 +40,12 @@ class Game {
      */
     startGame() {
         const overlay = document.getElementById('overlay');
-        overlay.style.display = 'none';
-        this.activePhrase = new Phrase(this.getCurrentPhrase());
+        const startGame = document.getElementById('btn__reset');
+        startGame.addEventListener('click', e => {
+            console.log('clicking')
+            overlay.style.display = 'none';
+        })
+        this.activePhrase = this.getRandomPhrase()
         this.activePhrase.addPhraseToDisplay()
     }
 }
