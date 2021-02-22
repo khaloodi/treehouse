@@ -63,6 +63,24 @@ class Game {
         }
     }
 
+    /**
+     * Increases the value of the missed property
+     * Removes a life from the scoreboard
+     * Checks if player has remaining lives and ends the game if player is out
+     */
+    removeLife() {
+        if (this.missed == 5) {
+            this.gameOver();
+        }
+        const scoreBoard = document.querySelector('#scoreboard ol').children
+        let i = 0;
+        do {
+            scoreBoard[i].firstElementChild.src = "./images/lostHeart.png";
+            i++
+        } while (i <= this.missed)
+        this.missed += 1;
+    }
+
 
     /**
      * Handle game interaction
