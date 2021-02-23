@@ -54,13 +54,13 @@ class Game {
      */
     checkForWin() {
         const listOfLetters = document.querySelector('#phrase ul').children
-        for (let i = 0; i < listOfLetters.length; i++) {
-            if (listOfLetters[i].className.includes('hide')) {
+
+        for (el of listOfLetters) {
+            if (el.className.includes('hide')) {
                 return false;
-            } else {
-                return true;
             }
         }
+        return true;
     }
 
     /**
@@ -69,7 +69,7 @@ class Game {
      * Checks if player has remaining lives and ends the game if player is out
      */
     removeLife() {
-        if (this.missed == 5) {
+        if (this.missed == 4) {
             this.gameOver(false);
         }
         const scoreBoard = document.querySelector('#scoreboard ol').children
@@ -104,11 +104,17 @@ class Game {
      * @param (HTMLButtonElement) button - The clicked button element
      */
     handleInteraction(button) {
-        // console.log(button.innerText)
         button.disabled = true;
         if (this.activePhrase.phrase.includes(button.innerText) == false) {
             button.classList.add('wrong');
             this.removeLife();
+        }
+        if (this.activePhrase.phrase.includes(button.innerText) == true) {
+            button.classList.add('chosen');
+            this.activePhrase.showMatchedLetter(button.innerText);
+            if (this.checkForWin()) {
+                this.gameOver(true);
+            }
         }
     }
 }
