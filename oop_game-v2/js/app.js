@@ -12,6 +12,8 @@ for (el of keyboard) {
         game.handleInteraction(e.target);
     })
 }
+game = new Game();
+game.startGame();
 
 start.addEventListener('click', () => {
     if (document.getElementById('overlay').classList.contains('lose') || document.getElementById('overlay').classList.contains('win')) {
