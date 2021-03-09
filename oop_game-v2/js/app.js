@@ -19,12 +19,13 @@ start.addEventListener('click', () => {
     if (document.getElementById('overlay').classList.contains('lose') || document.getElementById('overlay').classList.contains('win')) {
         document.querySelector('#phrase ul').innerHTML = '';
         for (el of keyboard) {
-            el.setAttribute('disabled', false)
+            // console.log(el)
+            el.removeAttribute('disabled')
             el.classList.remove('wrong')
             el.classList.remove('chosen')
         }
         const scoreboard = document.querySelector('#scoreboard ol')
-        for (li of scoreboard) {
+        for (li of scoreboard.children) {
             li.firstElementChild.src = "./images/liveHeart.png";
         }
     }
